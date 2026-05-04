@@ -8347,7 +8347,13 @@ command_init (void)
         CMD_ARGS_DESC(
             N_("raw[-all]: set or remove away status on all connected servers"),
             N_("message: message for away (if no message is given, away status is "
-               "removed)")),
+               "removed)"),
+            "",
+            N_("By default the away status is displayed only locally by the irc plugin "
+               "(see /help irc.look.display_away)."),
+            "",
+            N_("This command can be caught by other plugins and scripts "
+               "(see \"Plugin API reference\", function \"hook_command_run\").")),
         "-all", &command_away, NULL, NULL);
     hook_command (
         NULL, "bar",
